@@ -26,6 +26,7 @@ gem 'paperclip',              '~> 5.1'
 gem 'meta-tags',              '~> 2.3', '>= 2.3.1'
 gem 'administrate',           '~> 0.3.0'
 gem 'bourbon',                '~> 4.2', '>= 4.2.7'
+gem 'language_list',          '~> 1.1'
 
 # gem 'foreman',                '~> 0.82.0'
 # gem 'bitters',                '~> 1.5'

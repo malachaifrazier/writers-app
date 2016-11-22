@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create',  as: :login_process
   get '/logout', to: 'sessions#destroy', as: :logout
 
+  resources :projects
+
 end

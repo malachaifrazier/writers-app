@@ -72,7 +72,7 @@ puts '------------'
 puts '------------'
 puts '------------'
 
-puts 'ADDING ADMIN ROLE!'
+puts 'ADDING APP USER ROLE!'
 
 puts '------------'
 puts '------------'

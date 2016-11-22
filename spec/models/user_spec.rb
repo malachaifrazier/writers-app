@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
 
   it { should respond_to(:full_name) }
 
-  skip { should have_one(:profile) }
+  it { should have_many(:projects) }
 
   describe "validation of username" do
     subject { User.new }

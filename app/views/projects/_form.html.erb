@@ -1,0 +1,17 @@
+<div class="container">
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :title, autofocus: true %>
+      <%= f.input :language, collection: LanguageList::COMMON_LANGUAGES, autofocus: true %>
+      <%= f.input :fabula, autofocus: true %>
+      <%= f.input :premise, autofocus: true %>
+      <%= f.input :setting, autofocus: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

@@ -37,6 +37,8 @@ class User < ApplicationRecord
               with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
             }
 
+  has_many :projects
+
   def full_name
     return if first_name.nil? || last_name.nil?
     first_name + " " + last_name
