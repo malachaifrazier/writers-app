@@ -1,7 +1,7 @@
 <!-- Setting Modal -->
-<div class="modal fade" id="settingModal"
+<div class="modal fade bs-example-modal-lg" id="settingModal"
  tabindex="-1" role="dialog" aria-labelledby="settingModal" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close col-lg-2" data-dismiss="modal" aria-label="Close">
@@ -17,7 +17,7 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :setting, autofocus: true, label: false, input_html: {rows: 12} %>
+            <%= f.input :setting, autofocus: true, label: false, input_html: {rows: 12}, as: :wysihtml5, class: "wysihtml5" %>
           </div>
 
           <div class="form-actions">

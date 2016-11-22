@@ -13,6 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require bootstrap-wysihtml5/wysihtml5x-toolbar.js
+//= require bootstrap-wysihtml5/handlebars.runtime.min.js
+//= require bootstrap-wysihtml5/minimum
+//= require projects
 //= require_tree .
 
 (function () {
@@ -31,5 +35,16 @@
   setTimeout(function() {
     return $(".alert-dismissable").fadeOut("slow");
   }, 5000);
+
+  $(".wysihtml5").each(function(i, elem) {
+    $(elem).wysihtml5(
+      {
+        "toolbar": {
+          "fa": true,
+          "image": false,
+        }
+      }
+    );
+  });
 
 }());
