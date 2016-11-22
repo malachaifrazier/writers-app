@@ -1,0 +1,20 @@
+defaults: &defaults
+  app_name: "Writers App"
+  domain: ""
+  bucket: "Butter"
+  access_key_id: ""
+  secret_access_key: ""
+  super_email: "malachaifrazier@gmail.com"
+  super_first_name: "Malachai"
+  super_last_name: "Frazier"
+  google_analytics_key: ""
+  MAILGUN_SMTP_PORT: ""
+  MAILGUN_SMTP_SERVER: ""
+  MAILGUN_SMTP_LOGIN: ""
+  MAILGUN_SMTP_PASSWORD: ""
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render 'layouts/common_head' %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>" data-spy="scroll">
+    <%= render 'layouts/navbar' %>
+
+    <% if user_signed_in? %>
+      <%#= render 'layouts/sidenav' %>
+    <% end %>
+
+    <main>
+      <div class="">
+        <div class="text-center">
+          <% flash.each do |name, msg| %>
+            <% if msg.is_a?(String) %>
+              <div class="alert-dismissable alert alert-<%= (name == :notice || name == :alert) ? "success" : "info" %>">
+                <!-- <button class="close" data-dismiss="alert">&#215;</button> -->
+                <%= content_tag :div, msg, id: "flash_#{name}" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
+
+      <%= render 'layouts/ganalytics' %>
+    </main>
+
+  </body>
+</html>
