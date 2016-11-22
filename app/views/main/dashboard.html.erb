@@ -3,7 +3,11 @@
     <div class="row">
       <h1>Hi!</h1>
 
-      <h2><u>Projects</u></h2>
+      <h2 class="">
+        <u>Projects</u>
+      </h2>
+      <%#= link_to 'New Project', new_project_path, class: "" %>
+      <%= link_to 'New Project', new_project_path, class: "btn btn-primary" %>
       <table class="table table-hover table-condensed">
         <thead>
           <tr>
