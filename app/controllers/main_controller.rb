@@ -17,7 +17,7 @@ class MainController < ApplicationController
     return redirect_to new_user_session_path unless user_signed_in?
 
     # content_type = %w(characters locations items).sample
-    # @content     = current_user.send(content_type).sample
+    @projects = current_user.projects.all
     # @question    = @content.question unless @content.nil?
   end
 end

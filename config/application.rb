@@ -22,7 +22,7 @@ module WritersApp
       generate.javascript_engine false
       generate.request_specs false
       generate.routing_specs true
-      generate.stylesheets false
+      generate.stylesheets true
       generate.test_framework :rspec
       generate.view_specs false
       generate.fixture_replacement :factory_girl

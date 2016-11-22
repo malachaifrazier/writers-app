@@ -3,21 +3,21 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @projects = Project.all
+    @projects = current_user.projects.all
   end
 
   def show
   end
 
   def new
-    @project = Project.new
+    @project = current_user.projects.new
   end
 
   def edit
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
 
     respond_to do |format|
       if @project.save
@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
 
 private
   def set_project
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find_by(id: params[:id])
   end
 
   def project_params
