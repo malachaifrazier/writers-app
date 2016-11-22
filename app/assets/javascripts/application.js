@@ -18,18 +18,18 @@
 (function () {
   setTimeout(function() {
     return $("#flash").fadeOut("slow");
-  }, 500000);
+  }, 50000);
 
   setTimeout(function() {
     return $(".alert").fadeOut("slow");
-  }, 500000);
+  }, 50000);
 
   setTimeout(function() {
     return $(".alert-quick").fadeOut("slow");
-  }, 500000);
+  }, 50000);
 
   setTimeout(function() {
     return $(".alert-dismissable").fadeOut("slow");
-  }, 500000);
+  }, 5000);
 
 }());

@@ -91,3 +91,8 @@ a:focus {
   color: #005580;
   text-decoration: none;
 }
+
+.panel-default:hover,
+.panel-default:focus {
+  background-color: #f7e8e8;
+}

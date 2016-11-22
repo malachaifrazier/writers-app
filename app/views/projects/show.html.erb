@@ -1,5 +1,48 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+  <%= render partial: "modals/premise_modal", locals: { project: @project } %>
+  <%= render partial: "modals/fabula_modal", locals: { project: @project } %>
+  <%= render partial: "modals/setting_modal", locals: { project: @project } %>
+  <p id="notice"><%#= notice %></p>
+
+  <div class="row">
+    <h1>Architecture of "<%= @project.title %>"</h1>
+    <hr>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-3">
+      <div class="panel panel-default">
+        <%= link_to "#", data: { :"toggle" => "modal", :"target" => "#premiseModal" } do %>
+          <div class="panel-body">
+            <p><b>Premise</b></p>
+            <p>Describe the entire creative work in one sentence. Conflict and resolution.</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3">
+      <div class="panel panel-default">
+        <%= link_to "#", data: { :"toggle" => "modal", :"target" => "#fabulaModal" } do %>
+          <div class="panel-body">
+            <p><b>Fabula</b></p>
+            <p>Narration of the events sorted by their logical and chronological sequence.</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3">
+      <div class="panel panel-default">
+        <%= link_to "#", data: { :"toggle" => "modal", :"target" => "#settingModal" } do %>
+          <div class="panel-body">
+            <p><b>Setting</b></p>
+            <p>Description on the time, place and social context where the story is developed.</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
   <p>
     <strong>Title:</strong>
@@ -24,11 +67,6 @@
   <p>
     <strong>Setting:</strong>
     <%= @project.setting %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= @project.user_id %>
   </p>
 
   <%= link_to 'Edit', edit_project_path(@project) %> |

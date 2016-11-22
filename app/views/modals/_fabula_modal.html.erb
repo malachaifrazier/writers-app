@@ -1,0 +1,31 @@
+<!-- Fabula Modal -->
+<div class="modal fade" id="fabulaModal"
+ tabindex="-1" role="dialog" aria-labelledby="fabulaModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close col-lg-2" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Fabula</h4>
+      </div>
+
+      <div class="modal-body">
+        <p>Narration of the events sorted by their logical and chronological sequence.</p>
+        <hr>
+        <%= simple_form_for(@project) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :fabula, autofocus: true, label: false, input_html: {rows: 12} %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
