@@ -15,6 +15,7 @@ RSpec.describe ProjectsController, type: :controller do
   let(:invalid_attributes) {
     {
       user_id: nil,
+      title: "",
     }
   }
 
