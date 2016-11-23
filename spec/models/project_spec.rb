@@ -11,6 +11,8 @@ RSpec.describe Project, type: :model do
   it { should respond_to(:fabula) }
 
   it { should belong_to(:user) }
+  it { should have_many(:strands) }
+
   it { should validate_presence_of(:user_id) }
   it { should validate_presence_of(:title) }
 

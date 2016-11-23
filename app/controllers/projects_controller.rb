@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @strands = @project.strands.all
+    @strand  = @project.strands.new
   end
 
   def new

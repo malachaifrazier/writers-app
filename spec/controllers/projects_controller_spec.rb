@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
-  let(:user)    { create(:user) }
-  # let(:project) { create(:project, user: user) }
+  let(:user) { create(:user) }
 
   let(:valid_attributes) {
     {
