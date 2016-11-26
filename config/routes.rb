@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: :logout
 
   resources :projects
-  resources :strands
+  resources :strands do
+    put :sort, on: :collection
+  end
 
 end

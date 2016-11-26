@@ -1,5 +1,5 @@
 <!-- Fabula Modal -->
-<div class="modal fade strandModal-<%= strand.id %>"
+<div class="modal fade" id="newStrandModal"
  tabindex="-1" role="dialog" aria-labelledby="strandModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -13,7 +13,7 @@
       <div class="modal-body">
         <p>Narrative strands, each one connected to the development of one specific conflict.</p>
         <hr>
-        <%= simple_form_for(strand) do |f| %>
+        <%= simple_form_for(@strand) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">

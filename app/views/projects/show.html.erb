@@ -2,7 +2,7 @@
   <%= render partial: "modals/premise_modal", locals: { project: @project } %>
   <%= render partial: "modals/fabula_modal", locals: { project: @project } %>
   <%= render partial: "modals/setting_modal", locals: { project: @project } %>
-  <%= render partial: "modals/strand_modal", locals: { project: @project } %>
+  <%= render partial: "modals/new_strand_modal", locals: { strand: @strand, project: @project } %>
   <p id="notice"><%#= notice %></p>
 
   <div class="row">
@@ -58,7 +58,7 @@
       <span>Narrative strands, each one connected to the development of one specific conflict.</span>
       <% if @strands.any? %>
         <%= link_to "#", class: "modals btn btn-primary pull-right",
-          data: { :"toggle" => "modal", :"target" => "#strandModal" } do %>
+          data: { :"toggle" => "modal", :"target" => "#newStrandModal" } do %>
           <span>Create the next narrative strand here</span>
         <% end %>
       <% end %>
@@ -66,35 +66,22 @@
     <hr>
   </div>
 
-  <% if @strands.any? %>
-    <% @strands.each do |strand| %>
-      <div class="row-fluid">
-        <div class="col-lg-3 col-md-3">
-          <div class="panel panel-default">
-            <%= link_to "#", class: "modals", data: { :"toggle" => "modal", :"target" => "#strandModal" } do %>
-              <div class="panel-body">
-                <p>
-                  <b><%= strand.name %></b>
-                  <%= link_to strand, method: :delete, class: "pull-right",
-                    data: { confirm: 'Are you sure?' } do %>
-                    <i class="fa fa-trash"></i>
-                  <% end %>
-                </p>
-              </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-3 sortable">
+      <% if @strands.any? %>
+        <%= render 'projects/strands', strands: @strands %>
+      <% else %>
+        <div class="row-fluid">
+          <div class="well col-lg-6 col-md-6">
+            <p>There are no narrative strands for this project.</p>
+            <%= link_to "#", class: "modals btn btn-primary",
+             data: { :"toggle" => "modal", :"target" => "#strandModal" } do %>
+              <span>Create the first narrative strand here</span>
             <% end %>
           </div>
         </div>
-      </div>
-    <% end %>
-  <% else %>
-    <div class="row-fluid">
-      <div class="well col-lg-6 col-md-6">
-        <p>There are no narrative strands for this project.</p>
-        <%= link_to "#", class: "modals btn btn-primary",
-         data: { :"toggle" => "modal", :"target" => "#strandModal" } do %>
-          <span>Create the first narrative strand here</span>
-        <% end %>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+
 </div>

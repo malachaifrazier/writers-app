@@ -12,10 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/sortable
+//= require jquery-ui/effect-highlight
 //= require bootstrap-sprockets
 //= require bootstrap-wysihtml5/wysihtml5x-toolbar.js
 //= require bootstrap-wysihtml5/handlebars.runtime.min.js
 //= require bootstrap-wysihtml5/minimum
+//= require html.sortable
 //= require projects
 //= require_tree .
 

@@ -14,4 +14,6 @@
 class Strand < ApplicationRecord
   belongs_to :project
   validates_presence_of :project_id, :name
+
+  acts_as_list scope: :project
 end

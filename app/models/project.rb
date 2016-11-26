@@ -14,8 +14,8 @@
 #
 
 class Project < ApplicationRecord
+  has_many :strands, -> { order(position: :asc) }
   belongs_to :user
-  has_many :strands
-  validates_presence_of :user_id, :title
 
+  validates_presence_of :user_id, :title
 end

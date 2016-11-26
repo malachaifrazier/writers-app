@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @strands = @project.strands.all
+    @strands = @project.strands.all # @project.strands.rank(:position).all
     @strand  = @project.strands.new
   end
 
