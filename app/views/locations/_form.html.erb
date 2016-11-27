@@ -1,0 +1,17 @@
+<%= simple_form_for(@location) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, autofocus: true,
+      label: "Name of the locations (e.g. house on the beach, village square)" %>
+    <%= f.input :nation, autofocus: true %>
+    <%= f.input :state, autofocus: true %>
+    <%= f.input :city, autofocus: true %>
+    <%= f.association :project, as: :select %>
+    <%= f.input :description, autofocus: true, label: false, input_html: {rows: 12, class: "summernote"} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

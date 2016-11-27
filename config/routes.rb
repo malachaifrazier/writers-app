@@ -31,5 +31,8 @@ Rails.application.routes.draw do
   resources :strands do
     put :sort, on: :collection
   end
+  resources :locations do
+    put :sort, on: :collection
+  end
 
 end

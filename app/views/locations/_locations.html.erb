@@ -1,0 +1,13 @@
+<% @locations.each do |location| %>
+  <%= render partial: "modals/location_modal", locals: { location: location, project: @project } %>
+  <div class="panel panel-default" data-id="<%= location.id %>" data-pos="<%= location.position %>">
+    <div class="panel-body">
+      <%= link_to "#", class: "modals", data: { :"toggle" => "modal", :"target" => ".locationModal-#{location.id}" } do %>
+        <b><%= location.name %></b>
+        <%= link_to location, method: :delete, class: "pull-right", data: { confirm: 'Are you sure?' } do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

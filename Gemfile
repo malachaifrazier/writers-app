@@ -29,7 +29,10 @@ gem 'bourbon',                '~> 4.2', '>= 4.2.7'
 gem 'language_list',          '~> 1.1'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
-gem 'bootstrap-wysihtml5-rails'
+
+# gem 'summernote-rails'
+# gem 'codemirror-rails'
+# gem 'bootstrap-wysihtml5-rails'
 
 # gem 'foreman',                '~> 0.82.0'
 # gem 'bitters',                '~> 1.5'

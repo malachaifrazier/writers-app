@@ -15,12 +15,36 @@
 //= require jquery-ui/sortable
 //= require jquery-ui/effect-highlight
 //= require bootstrap-sprockets
-//= require bootstrap-wysihtml5/wysihtml5x-toolbar.js
-//= require bootstrap-wysihtml5/handlebars.runtime.min.js
-//= require bootstrap-wysihtml5/minimum
 //= require html.sortable
-//= require projects
+//= require summernote
 //= require_tree .
+
+$(document).ready(function(){
+  // $('.summernote').summernote('code');
+  // $('.summernote').summernote({
+  //   height: 300,                 // set editor height
+  //   minHeight: null,             // set minimum height of editor
+  //   maxHeight: null,             // set maximum height of editor
+  //   focus: true                  // set focus to editable area after initializing summernote
+  // });
+
+  $('.summernote').summernote({
+    height: 200,                 // set editor height
+    minHeight: null,             // set minimum height of editor
+    maxHeight: null,             // set maximum height of editor
+    focus: true,
+    toolbar: [
+      // [groupName, [list of button]]
+      ['style', ['bold', 'italic', 'underline', 'clear']],
+      ['font', ['strikethrough', 'superscript', 'subscript']],
+      ['fontsize', ['fontsize']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['height', ['height']],
+      ['misc', ['undo', 'redo', 'help', 'fullscreen']]
+    ]
+  });
+});
 
 (function () {
   setTimeout(function() {
@@ -39,15 +63,15 @@
     return $(".alert-dismissable").fadeOut("slow");
   }, 5000);
 
-  $(".wysihtml5").each(function(i, elem) {
-    $(elem).wysihtml5(
-      {
-        "toolbar": {
-          "fa": true,
-          "image": false,
-        }
-      }
-    );
-  });
+  // $(".wysihtml5").each(function(i, elem) {
+  //   $(elem).wysihtml5(
+  //     {
+  //       "toolbar": {
+  //         "fa": true,
+  //         "image": false,
+  //       }
+  //     }
+  //   );
+  // });
 
 }());

@@ -16,7 +16,7 @@
 
 //   // after the order changes
 //   $('.sortable').sortable().bind('sortupdate', function(e, ui) {
-//   sortable('.sortable', 'sortupdate', function(e) {
+//   // sortable('.sortable', 'sortupdate', function(e) {
 //     updated_order = []
 //     console.log("set the updated positions");
 //     set_positions();
@@ -33,7 +33,7 @@
 //     $.ajax({
 //       type: "PUT",
 //       dataType: "json",
-//       url: "/strands/sort",
+//       url: "/locations/sort",
 //       data: {
 //         order: updated_order
 //       }

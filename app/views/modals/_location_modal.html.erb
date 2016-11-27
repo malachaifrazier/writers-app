@@ -1,25 +1,25 @@
-<!-- Strand Modal -->
-<div class="modal fade strandModal-<%= strand.id %>"
- tabindex="-1" role="dialog" aria-labelledby="strandModal" aria-hidden="true">
+<!-- Location Modal -->
+<div class="modal fade locationModal-<%= location.id %>"
+ tabindex="-1" role="dialog" aria-labelledby="locationModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close col-lg-2" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Narrative Strands</h4>
+        <%= link_to 'Edit', edit_location_path(location), class: 'btn btn-primary btn-sm pull-right' %>
+        <h4 class="modal-title">
+          Location (<%= location.name %>)
+        </h4>
       </div>
 
       <div class="modal-body">
-        <p>Narrative strands, each one connected to the development of one specific conflict.</p>
-        <hr>
-        <%= simple_form_for(strand) do |f| %>
+        <%= simple_form_for(location) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :name, autofocus: true %>
             <%= f.input :description, autofocus: true, label: false, input_html: {rows: 12, class: "summernote"} %>
-            <%= f.input :project_id, as: :hidden, input_html: {value: @project.to_param} %>
+            <%#= f.input :project_id, as: :hidden, input_html: {value: @project.to_param} %>
           </div>
 
           <div class="form-actions">

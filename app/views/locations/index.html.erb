@@ -1,0 +1,88 @@
+<div class="container">
+  <%= render partial: "modals/new_location_modal", locals: { location: @location, project: @project } %>
+  <p id="notice"><%#= notice %></p>
+
+  <div class="row">
+    <p>
+      <h1>Locations
+        <% if @locations.any? %>
+          <span class="small pull-right">
+            <%= link_to "#", class: "modals btn btn-primary pull-right",
+              data: { :"toggle" => "modal", :"target" => "#newLocationModal" } do %>
+              <span>Create the next location here</span>
+            <% end %>
+          </span>
+        <% end %>
+      </h1>
+    </p>
+    <hr>
+  </div>
+
+  <div class="row">
+    <% if @locations.any? %>
+      <div class="col-lg-3 col-md-3 sortable">
+        <%= render 'locations/locations', locations: @locations %>
+      </div>
+    <% else %>
+      <%#= render partial: "modals/new_strand_modal", locals: { strand: @strand, project: @project } %>
+      <div class="well col-lg-8 col-md-8">
+        <p>There are no locations for this project.</p>
+        <%= link_to "#", class: "modals btn btn-primary",
+         data: { :"toggle" => "modal", :"target" => "#newLocationModal" } do %>
+          <span>Create the first location here</span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("a.modals").click(function() {
+      $(".bootstrap-wysihtml5-insert-image-modal").parent().hide();
+    });
+
+    set_positions = function(){
+      $('.sortable').each(function(i){
+        // debugger
+        // $(this).children(".panel.panel-default").attr("data-pos",i+1);
+        $(this).attr("data-pos",i+1);
+      });
+    }
+
+    console.log("Setting positions");
+    set_positions();
+    sortable('.sortable', {
+      hoverClass: 'is-hovered'
+    });
+
+    // after the order changes
+    $('.sortable').sortable().bind('sortupdate', function(e, ui) {
+    // sortable('.sortable', 'sortupdate', function(e) {
+      updated_order = []
+      console.log("set the updated positions");
+      set_positions();
+
+      console.log("populate the updated_order array with the new task positions");
+      $('.sortable').each(function(i){
+        updated_order.push({
+          id: $(this).children(".panel.panel-default.is-hovered").data("id"),
+          position: i+1
+        });
+      });
+
+      console.log("send the updated order via ajax");
+      $.ajax({
+        type: "PUT",
+        dataType: "json",
+        url: "/locations/sort",
+        data: {
+          order: updated_order
+        }
+      });
+    });
+
+  });
+
+</script>

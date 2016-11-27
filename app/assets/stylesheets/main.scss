@@ -105,5 +105,10 @@ a:focus {
 }
 
 .sortable {
-  display: list-item;
+  // display: list-item;
+}
+
+.btn-group, .btn-group-vertical {
+  display: inline-flex;
+  vertical-align: middle;
 }
