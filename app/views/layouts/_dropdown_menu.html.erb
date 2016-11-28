@@ -32,6 +32,14 @@
 
           <li class="divider"></li>
           <li>
+            <%= link_to(chapters_path) do %>
+              <i class="fa fa-book"></i>
+              <span>Chapters</span>
+            <% end %>
+          </li>
+
+          <li class="divider"></li>
+          <li>
             <%= link_to(edit_user_registration_path) do %>
               <i class="fa fa-group"></i>
               <span>User Settings</span>
