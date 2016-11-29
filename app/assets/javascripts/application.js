@@ -21,13 +21,6 @@
 
 $(document).ready(function(){
   // $('.summernote').summernote('code');
-  // $('.summernote').summernote({
-  //   height: 300,                 // set editor height
-  //   minHeight: null,             // set minimum height of editor
-  //   maxHeight: null,             // set maximum height of editor
-  //   focus: true                  // set focus to editable area after initializing summernote
-  // });
-
   $('.summernote').summernote({
     height: 200,                 // set editor height
     minHeight: null,             // set minimum height of editor
@@ -62,16 +55,5 @@ $(document).ready(function(){
   setTimeout(function() {
     return $(".alert-dismissable").fadeOut("slow");
   }, 5000);
-
-  // $(".wysihtml5").each(function(i, elem) {
-  //   $(elem).wysihtml5(
-  //     {
-  //       "toolbar": {
-  //         "fa": true,
-  //         "image": false,
-  //       }
-  //     }
-  //   );
-  // });
 
 }());

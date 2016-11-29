@@ -16,6 +16,7 @@
 class Project < ApplicationRecord
   has_many :strands,   -> { order(position: :asc) }
   has_many :locations, -> { order(position: :asc) }
+  has_many :chapters,  -> { order(position: :asc) }
   belongs_to :user
 
   validates_presence_of :user_id, :title

@@ -1,0 +1,13 @@
+<% @scenes.each do |scene| %>
+  <%= render partial: "modals/scene_modal", locals: { scene: scene, chapter: @chapter } %>
+  <div class="panel panel-default" data-id="<%= scene.id %>">
+    <div class="panel-body">
+      <%= link_to "#", class: "modals", data: { :"toggle" => "modal", :"target" => ".sceneModal-#{scene.id}" } do %>
+        <b>#<%= scene.position %> <%= scene.title %></b>
+        <%= link_to scene, method: :delete, class: "pull-right", data: { confirm: 'Are you sure?' } do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

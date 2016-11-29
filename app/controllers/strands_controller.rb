@@ -49,9 +49,9 @@ class StrandsController < ApplicationController
   end
 
   def sort
-    params[:order].each do |key,value|
+    params[:order].each do |key, value|
       strand = Strand.find_by(id: value[:id])
-      if strand.reload && strand.insert_at(value[:position].to_i) #strand.update_attribute(:position, value[:position])
+      if strand.reload && strand.insert_at(value[:position].to_i)
         respond_to do |format|
           format.html { redirect_to :back, status: 301, notice: "#{strand.name} moved to position #{strand.position}" }
           format.json { head :no_content }
