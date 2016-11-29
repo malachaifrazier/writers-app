@@ -2,6 +2,7 @@
   <%= render partial: "modals/reason_modal", locals: { chapter: @chapter } %>
   <%= render partial: "modals/note_modal", locals: { chapter: @chapter } %>
   <%= render partial: "modals/new_chapter_modal", locals: { chapter: @chapter, chapter: @chapter } %>
+  <%= render partial: "modals/new_scene_modal", locals: { chapter: @chapter, scene: @scene } %>
   <p id="notice"><%#= notice %></p>
 
   <div class="row">
@@ -41,15 +42,14 @@
   </div>
 
   <div class="row">
-    <h1>Scenes</h1>
-    <p class="lead">
+    <h1>Scenes
       <% if @scenes.any? %>
-        <%= link_to "#", class: "modals btn btn-primary pull-right",
+        <%= link_to "#", class: "modals btn bt-sm btn-primary pull-right",
           data: { :"toggle" => "modal", :"target" => "#newSceneModal" } do %>
           <span>Create a scene here</span>
         <% end %>
       <% end %>
-    </p>
+    </h1>
     <hr>
   </div>
 
@@ -60,7 +60,7 @@
       </div>
     <% else %>
       <div class="well col-lg-8 col-md-8">
-        <p>There are no scenes for this chapter.</p>
+        <p>There are no scenes for this chapter</p>
         <%= link_to "#", class: "modals btn btn-primary",
          data: { :"toggle" => "modal", :"target" => "#newSceneModal" } do %>
           <span>Create the first scene here.</span>
@@ -90,7 +90,6 @@
 
     // after the order changes
     $('.sortable').sortable().bind('sortupdate', function(e, ui) {
-    // sortable('.sortable', 'sortupdate', function(e) {
       updated_order = []
       console.log("set the updated positions");
       set_positions();
@@ -107,7 +106,7 @@
       $.ajax({
         type: "PUT",
         dataType: "json",
-        url: "/chapters/sort",
+        url: "/scenes/sort",
         data: {
           order: updated_order
         }

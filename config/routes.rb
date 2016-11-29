@@ -38,5 +38,8 @@ Rails.application.routes.draw do
   resources :chapters do
     put :sort, on: :collection
   end
+  resources :scenes do
+    put :sort, on: :collection
+  end
 
 end

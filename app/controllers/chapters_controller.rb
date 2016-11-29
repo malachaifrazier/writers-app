@@ -7,7 +7,8 @@ class ChaptersController < ApplicationController
   end
 
   def show
-    @scenes = []#@chapter.scenes.order(:position)
+    @scenes = @chapter.scenes.order(:position)
+    @scene  = @chapter.scenes.new
   end
 
   def new

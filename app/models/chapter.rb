@@ -13,7 +13,9 @@
 #
 
 class Chapter < ApplicationRecord
+  has_many :scenes, -> { order(position: :asc) }
   belongs_to :project
+
   validates_presence_of :project_id, :title, :position
 
   acts_as_list scope: :project

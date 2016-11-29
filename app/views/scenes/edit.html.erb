@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Editing Scene</h1>
+
+  <%= render 'form', scene: @scene %>
+
+  <%#= link_to 'Show', @scene %>
+  <%= link_to 'Go to chapter', chapter_path(@scene.chapter) %> |
+  <%= link_to 'Back', scenes_path %>
+</div>

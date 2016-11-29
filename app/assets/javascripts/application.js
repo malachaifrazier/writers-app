@@ -56,15 +56,4 @@ $(document).ready(function(){
     return $(".alert-dismissable").fadeOut("slow");
   }, 5000);
 
-  // $(".wysihtml5").each(function(i, elem) {
-  //   $(elem).wysihtml5(
-  //     {
-  //       "toolbar": {
-  //         "fa": true,
-  //         "image": false,
-  //       }
-  //     }
-  //   );
-  // });
-
 }());
