@@ -1,0 +1,119 @@
+<div class="container">
+  <%= render partial: "modals/new_main_character_modal", locals: { character: @main_character, project: @project } %>
+  <%= render partial: "modals/new_secondary_character_modal", locals: { character: @secondary_character, project: @project } %>
+  <p id="notice"><%#= notice %></p>
+
+  <div class="row">
+    <p>
+      <h1>Main Characters
+        <% if @main_characters.any? %>
+          <span class="small pull-right">
+            <%= link_to "#", class: "modals btn btn-primary pull-right",
+              data: { :"toggle" => "modal", :"target" => "#newMainCharacterModal" } do %>
+              <span>Create the next main character here</span>
+            <% end %>
+          </span>
+        <% end %>
+      </h1>
+    </p>
+    <hr>
+  </div>
+
+  <div class="row">
+    <% if @main_characters.any? %>
+      <div class="col-lg-3 col-md-3 sortable">
+        <%= render 'characters/main_characters', characters: @main_characters %>
+      </div>
+    <% else %>
+      <%#= render partial: "modals/new_strand_modal", locals: { strand: @strand, project: @project } %>
+      <div class="well col-lg-8 col-md-8">
+        <p>There are no main characters for this project.</p>
+        <%= link_to "#", class: "modals btn btn-primary",
+         data: { :"toggle" => "modal", :"target" => "#newMainCharacterModal" } do %>
+          <span>Create the first main character here</span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+ <div class="row">
+    <p>
+      <h1>Secondary Characters
+        <% if @secondary_characters.any? %>
+          <span class="small pull-right">
+            <%= link_to "#", class: "modals btn btn-primary pull-right",
+              data: { :"toggle" => "modal", :"target" => "#newSecondaryCharacterModal" } do %>
+              <span>Create the next secondary character here</span>
+            <% end %>
+          </span>
+        <% end %>
+      </h1>
+    </p>
+    <hr>
+  </div>
+
+  <div class="row">
+    <% if @secondary_characters.any? %>
+      <div class="col-lg-3 col-md-3 sortable">
+        <%= render 'characters/secondary_characters', characters: @secondary_characters %>
+      </div>
+    <% else %>
+      <%#= render partial: "modals/new_strand_modal", locals: { strand: @strand, project: @project } %>
+      <div class="well col-lg-8 col-md-8">
+        <p>There are no secondary characters for this project.</p>
+        <%= link_to "#", class: "modals btn btn-primary",
+         data: { :"toggle" => "modal", :"target" => "#newSecondaryCharacterModal" } do %>
+          <span>Create the first secondary character here</span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("a.modals").click(function() {
+      $(".bootstrap-wysihtml5-insert-image-modal").parent().hide();
+    });
+
+    set_positions = function(){
+      $('.sortable').each(function(i){
+        $(this).attr("data-pos",i+1);
+      });
+    }
+
+    console.log("Setting positions");
+    set_positions();
+    sortable('.sortable', {
+      hoverClass: 'is-hovered'
+    });
+
+    // after the order changes
+    $('.sortable').sortable().bind('sortupdate', function(e, ui) {
+    // sortable('.sortable', 'sortupdate', function(e) {
+      updated_order = []
+      console.log("set the updated positions");
+      set_positions();
+
+      console.log("populate the updated_order array with the new task positions");
+      $('.sortable').each(function(i){
+        updated_order.push({
+          id: $(this).children(".panel.panel-default.is-hovered").data("id"),
+          position: i+1
+        });
+      });
+
+      console.log("send the updated order via ajax");
+      $.ajax({
+        type: "PUT",
+        dataType: "json",
+        url: "/characters/sort",
+        data: {
+          order: updated_order
+        }
+      });
+    });
+
+  });
+
+</script>

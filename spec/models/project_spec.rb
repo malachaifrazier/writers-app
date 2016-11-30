@@ -14,6 +14,7 @@ RSpec.describe Project, type: :model do
   it { should have_many(:strands) }
   it { should have_many(:locations) }
   it { should have_many(:chapters) }
+  it { should have_many(:characters) }
 
   it { should validate_presence_of(:user_id) }
   it { should validate_presence_of(:title) }

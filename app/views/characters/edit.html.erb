@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Editing Character</h1>
+
+  <%= render 'form', character: @character %>
+
+  <%= link_to 'Go to project', project_path(@character.project) %> |
+  <%= link_to 'Back', characters_path %>
+</div>

@@ -1,0 +1,32 @@
+<!-- New Main Character Modal -->
+<div class="modal fade" id="newMainCharacterModal"
+ tabindex="-1" role="dialog" aria-labelledby="newMainCharacterModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close col-lg-2" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Main Characters</h4>
+      </div>
+
+      <div class="modal-body">
+        <%= simple_form_for(@main_character) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :first_name, autofocus: true %>
+            <%= f.input :last_name, autofocus: true %>
+            <%= f.input :main_character, autofocus: true, as: :hidden %>
+            <%= f.association :project, as: :select, include_blank: false %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
