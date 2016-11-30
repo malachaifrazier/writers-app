@@ -6,6 +6,9 @@
   <div class="row">
     <p>
       <h1>Main Characters
+        <span class="lead">
+          Each main characters has a conflict, driving force of the plot
+        </span>
         <% if @main_characters.any? %>
           <span class="small pull-right">
             <%= link_to "#", class: "modals btn btn-primary pull-right",
@@ -39,6 +42,9 @@
  <div class="row">
     <p>
       <h1>Secondary Characters
+        <span class="lead">
+          Don't have conflicts, but are useful for story development
+        </span>
         <% if @secondary_characters.any? %>
           <span class="small pull-right">
             <%= link_to "#", class: "modals btn btn-primary pull-right",
