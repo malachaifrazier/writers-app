@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @character.first_name %>
-</p>
+  <p>
+    <strong>First name:</strong>
+    <%= @character.first_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @character.last_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @character.last_name %>
+  </p>
 
-<p>
-  <strong>Position:</strong>
-  <%= @character.position %>
-</p>
+  <p>
+    <strong>Position:</strong>
+    <%= @character.position %>
+  </p>
 
-<p>
-  <strong>Chapter:</strong>
-  <%= @character.chapter_id %>
-</p>
+  <p>
+    <strong>Project:</strong>
+    <%= @character.project.title %>
+  </p>
 
-<p>
-  <strong>Main character:</strong>
-  <%= @character.main_character %>
-</p>
+  <p>
+    <strong>Main character:</strong>
+    <%= @character.main_character %>
+  </p>
 
-<%= link_to 'Edit', edit_character_path(@character) %> |
-<%= link_to 'Back', characters_path %>
+  <%= link_to 'Edit', edit_character_path(@character) %> |
+  <%= link_to 'Back', characters_path %>
+
+</div>

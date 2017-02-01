@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @scene.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @scene.title %>
+  </p>
 
-<p>
-  <strong>Position:</strong>
-  <%= @scene.position %>
-</p>
+  <p>
+    <strong>Position:</strong>
+    <%= @scene.position %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @scene.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= raw @scene.description %>
+  </p>
 
-<p>
-  <strong>Chapter:</strong>
-  <%= @scene.chapter_id %>
-</p>
+  <p>
+    <strong>Chapter:</strong>
+    <%= @scene.chapter_id %>
+  </p>
 
-<%= link_to 'Edit', edit_scene_path(@scene) %> |
-<%= link_to 'Back', scenes_path %>
+  <%= link_to 'Edit', edit_scene_path(@scene) %> |
+  <%= link_to 'Back', scenes_path %>
+</div>

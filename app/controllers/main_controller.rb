@@ -16,6 +16,11 @@ class MainController < ApplicationController
   def dashboard
     return redirect_to new_user_session_path unless user_signed_in?
 
-    @projects = current_user.projects.all
+    @projects   = current_user.projects.all
+    @chapters   = current_user.chapters.all
+    @locations  = current_user.locations.all
+    @scenes     = current_user.scenes.all
+    @strands    = current_user.strands.all
+    @characters = current_user.characters.all
   end
 end

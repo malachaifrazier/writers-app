@@ -38,6 +38,11 @@ class User < ApplicationRecord
             }
 
   has_many :projects
+  has_many :chapters,   through: :projects
+  has_many :characters, through: :projects
+  has_many :locations,  through: :projects
+  has_many :strands,    through: :projects
+  has_many :scenes,     through: :chapters
 
   def full_name
     return if first_name.nil? || last_name.nil?

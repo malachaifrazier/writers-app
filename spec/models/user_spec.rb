@@ -9,6 +9,11 @@ RSpec.describe User, type: :model do
   it { should respond_to(:full_name) }
 
   it { should have_many(:projects) }
+  it { should have_many(:chapters).through(:projects) }
+  it { should have_many(:characters).through(:projects) }
+  it { should have_many(:locations).through(:projects) }
+  it { should have_many(:strands).through(:projects) }
+  it { should have_many(:scenes).through(:chapters) }
 
   describe "validation of username" do
     subject { User.new }

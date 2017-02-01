@@ -1,33 +1,36 @@
 <div class="container">
-  <div class="section">
-    <div class="row">
-      <h2 class="">
-        <u>Projects</u>
-      </h2>
-      <%#= link_to 'New Project', new_project_path, class: "" %>
-      <%= link_to 'New Project', new_project_path, class: "btn btn-primary" %>
-      <table class="table table-hover table-condensed">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Language</th>
-            <th>Actions</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @projects.each do |project| %>
-            <tr>
-              <td><%= project.title %></td>
-              <td><%= project.language %></td>
-              <td><%= link_to 'Show', project %></td>
-              <td><%= link_to 'Edit', edit_project_path(project) %></td>
-              <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+  <div class="row">
+    <%= render partial: "projects" %>
   </div>
+
+  <hr>
+
+  <div class="row">
+    <%= render partial: "chapters" %>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <%= render partial: "scenes" %>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <%= render partial: "characters" %>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <%= render partial: "locations" %>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <%= render partial: "strands" %>
+  </div>
+
 </div>
