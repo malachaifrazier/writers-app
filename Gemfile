@@ -10,7 +10,7 @@ gem 'jquery-rails', '~> 4.2', '>= 4.2.1'
 gem 'jbuilder',     '~> 2.6'
 
 gem 'rolify',                 '~> 5.1'
-gem 'simple_form',            '~> 3.3', '>= 3.3.1'
+gem 'simple_form',            '~> 5.0'
 gem 'aws-sdk',                '~> 2.6', '>= 2.6.26'
 gem 'aws-sdk-resources',      '~> 2.6', '>= 2.6.26'
 gem 'browser',                '~> 2.3'
