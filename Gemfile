@@ -69,7 +69,7 @@ group :test do
   gem 'shoulda-matchers',         '~> 3.1', '>= 3.1.1', require: false
   gem 'rails_best_practices',     '~> 1.17'
   gem 'rspec_candy',              '~> 0.4.1'
-  gem 'rspec-rails',              '~> 3.5', '>= 3.5.2'
+  gem 'rspec-rails',              '~> 3.9'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.1'
   gem 'rspec-activemodel-mocks',  '~> 1.0', '>= 1.0.3'
   gem 'faker',                    '~> 1.6', '>= 1.6.6'
